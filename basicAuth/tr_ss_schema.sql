@@ -1,3 +1,5 @@
+# Database schema setup.
+
 create table users
 (
     username varchar(75)  not null primary key,

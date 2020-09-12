@@ -10,7 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 /**
- * ApplicationConfig
+ * Spring application configuration.
  */
 @Configuration
 @PropertySource("classpath:mysqldb.properties")

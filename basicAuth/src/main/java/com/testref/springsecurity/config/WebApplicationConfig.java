@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
- * WebApplicationConfig
+ * Web application configuration file.
  */
 @Configuration
 @EnableWebMvc
