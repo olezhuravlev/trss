@@ -1,1 +1,4 @@
-~/SpringSecurity/basicAuth
+.idea/
+*.iml
+/target
+/**/out

@@ -1,4 +1,4 @@
-package com.testref.controllers;
+package com.testref.springsecurity.controller;
 
 import java.security.Principal;
 

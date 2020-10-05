@@ -13,7 +13,8 @@ import org.springframework.core.env.Environment;
  * Spring application configuration.
  */
 @Configuration
-@PropertySource("classpath:mysqldb.properties")
+// classpath - src/main/resources
+@PropertySource("classpath:postgresql.properties")
 public class ApplicationConfig {
     
     @Autowired
@@ -24,9 +25,9 @@ public class ApplicationConfig {
         
         BasicDataSource basicDataSource = new BasicDataSource();
         basicDataSource.setDriverClassName(environment.getProperty("pgsql.driver"));
-        basicDataSource.setUrl("pgsql.jdbcUrl");
-        basicDataSource.setUsername("pgsql.username");
-        basicDataSource.setPassword("pgsql.password");
+        basicDataSource.setUrl(environment.getProperty("pgsql.jdbcUrl"));
+        basicDataSource.setUsername(environment.getProperty("pgsql.username"));
+        basicDataSource.setPassword(environment.getProperty("pgsql.password"));
         
         return basicDataSource;
     }

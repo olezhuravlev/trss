@@ -21,19 +21,19 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         
-        // Inform SS where to get users and their details.
+        // Inform Spring Security where to get users and their details.
         authenticationManagerBuilder
             .jdbcAuthentication()
             .dataSource(dataSource)
-            .usersByUsernameQuery("select username, password, enabled from users where username = ?")
-            .authoritiesByUsernameQuery("select username, authority from authorities where username = ?")
+            .usersByUsernameQuery("select username, password, enabled from tr_ss_schema.users where username = ?")
+            .authoritiesByUsernameQuery("select username, authority from tr_ss_schema.authorities where username = ?")
             .passwordEncoder(new BCryptPasswordEncoder());
     }
     
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
         
-        // Inform SS how to retrieve user's credentials - we will user basic authentication.
+        // Inform Spring Security how to retrieve user's credentials - we will user basic authentication.
         // NOTE: Used role names shouldn't start with prefix "ROLE_"!
         httpSecurity
             .authorizeRequests()
